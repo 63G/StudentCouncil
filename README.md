@@ -117,8 +117,3 @@ This project is dedicated to developing a website for the KFUPM Student Council.
 - Launch the website and perform post-deployment testing to ensure everything works correctly.
 
 #
-
-## Acknowledgments
-
-- Thanks to all KFUPM Student Council members for their support and contributions.
-- Special thanks to the design team for their efforts in creating the website's visual layout.
