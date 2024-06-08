@@ -47,91 +47,81 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const slideWidth = slides[0].getBoundingClientRect().width;
 
-    // Arrange the slides next to one another
-    const setSlidePosition = (slide, index) => {
-        slide.style.left = slideWidth * index + 'px';
-    };
-    slides.forEach(setSlidePosition);
+    let currentIndex = 0;
 
-    const moveToSlide = (track, currentSlide, targetSlide) => {
-        track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
-        currentSlide.classList.remove('current-slide');
-        targetSlide.classList.add('current-slide');
-    };
+    const moveToSlide = (index) => {
+        track.style.transform = `translateX(-${index * 100 / 3}%)`;
+        currentIndex = index;
 
-    const updateIndicators = (currentIndicator, targetIndicator) => {
-        currentIndicator.classList.remove('current-slide');
-        targetIndicator.classList.add('current-slide');
-    };
-
-    const hideAllContent = () => {
-        slides.forEach(slide => {
-            slide.querySelector('.news-content').style.opacity = '0';
-            slide.querySelector('.news-content').style.transform = 'translateY(20px)';
+        indicators.forEach((indicator, idx) => {
+            if (idx === index) {
+                indicator.classList.add('current-slide');
+            } else {
+                indicator.classList.remove('current-slide');
+            }
         });
     };
 
-    const showCurrentContent = () => {
-        const currentSlide = track.querySelector('.current-slide');
-        const newsContent = currentSlide.querySelector('.news-content');
-        newsContent.style.opacity = '1';
-        newsContent.style.transform = 'translateY(0)';
-    };
-
-    // When I click left, move slides to the left
-    prevButton.addEventListener('click', e => {
-        const currentSlide = track.querySelector('.current-slide');
-        const prevSlide = currentSlide.previousElementSibling;
-        const currentIndicator = nav.querySelector('.current-slide');
-        const prevIndicator = currentIndicator.previousElementSibling;
-
-        if (prevSlide) {
-            hideAllContent();
-            moveToSlide(track, currentSlide, prevSlide);
-            updateIndicators(currentIndicator, prevIndicator);
-            showCurrentContent();
+    nextButton.addEventListener('click', () => {
+        if (currentIndex < slides.length / 3 - 1) {
+            moveToSlide(currentIndex + 1);
+        } else {
+            moveToSlide(0);
         }
     });
 
-    // When I click right, move slides to the right
-    nextButton.addEventListener('click', e => {
-        const currentSlide = track.querySelector('.current-slide');
-        const nextSlide = currentSlide.nextElementSibling;
-        const currentIndicator = nav.querySelector('.current-slide');
-        const nextIndicator = currentIndicator.nextElementSibling;
-
-        if (nextSlide) {
-            hideAllContent();
-            moveToSlide(track, currentSlide, nextSlide);
-            updateIndicators(currentIndicator, nextIndicator);
-            showCurrentContent();
+    prevButton.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            moveToSlide(currentIndex - 1);
+        } else {
+            moveToSlide(Math.ceil(slides.length / 3) - 1);
         }
     });
 
-    // When I click the nav indicators, move to that slide
     nav.addEventListener('click', e => {
         const targetIndicator = e.target.closest('button');
 
         if (!targetIndicator) return;
 
-        const currentSlide = track.querySelector('.current-slide');
-        const currentIndicator = nav.querySelector('.current-slide');
         const targetIndex = indicators.findIndex(indicator => indicator === targetIndicator);
-        const targetSlide = slides[targetIndex];
-
-        if (targetSlide) {
-            hideAllContent();
-            moveToSlide(track, currentSlide, targetSlide);
-            updateIndicators(currentIndicator, targetIndicator);
-            showCurrentContent();
-        }
+        moveToSlide(targetIndex);
     });
 
-    // Initialize first slide content visibility
-    showCurrentContent();
+    moveToSlide(0);
 });
 
 // Scroll animations for member cards
 document.querySelectorAll('.member-card').forEach(element => {
     observer.observe(element);
+});
+
+// Form submission with JavaScript (Frontend)
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    const formData = {
+        name: name,
+        email: email,
+        message: message
+    };
+
+    fetch('submit-form', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert('Message sent successfully!');
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Error sending message.');
+    });
 });
