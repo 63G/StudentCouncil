@@ -125,3 +125,12 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
         alert('Error sending message.');
     });
 });
+
+// Smooth scrolling for survey cards
+document.querySelectorAll('.survey-card').forEach(card => {
+    card.addEventListener('click', function() {
+        const href = this.querySelector('.take-survey-button').getAttribute('href');
+        window.location.href = href;
+    });
+});
+

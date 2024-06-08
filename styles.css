@@ -619,6 +619,75 @@ footer {
 }
 
 
+/* SURVEYS SECTION */
+
+.surveys-section {
+    padding: 4em 0 4em;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.surveys-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 0em;
+}
+
+.surveys-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2em;
+    margin-top: 2em;
+}
+
+.survey-card {
+    background: #ffffff;
+    background-color: #d2e2d9ce;
+    /* background-image: url('campus.jpg'); */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2em;
+    text-align: left;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.survey-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.survey-content h3 {
+    font-size: 1.5em;
+    color: #006633;
+    margin-bottom: 0.5em;
+}
+
+.survey-content p {
+    font-size: 1em;
+    color: #666;
+    margin: 0.5em 0 1em;
+}
+
+.survey-footer {
+    text-align: right;
+}
+
+.take-survey-button {
+    background-color: #006633;
+    color: #ffffff;
+    padding: 0.8em 1.5em;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.take-survey-button:hover {
+    background-color: #004d26;
+    transform: scale(1.05);
+}
 
 
 
@@ -683,4 +752,55 @@ footer {
     width: 300px;
     height: 300px;
     margin-right: 0.5em;
+}
+
+
+/* SURVEY FORM SECTION */
+
+.survey-form-section {
+    padding: 6em 0 4em;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.survey-form-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 1em;
+}
+
+.form-group {
+    margin-bottom: 1.5em;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1em;
+    margin-bottom: 0.5em;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.submit-button {
+    background-color: #006633;
+    color: #ffffff;
+    padding: 0.8em 1.5em;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1em;
+}
+
+.submit-button:hover {
+    background-color: #004d26;
 }

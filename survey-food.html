@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #006633; /* Ensure the background color is set to avoid transparency issues */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a shadow for better visibility */
+    padding: 1em 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+
+/* Survey Form Section */
+
+.survey-form-section {
+    padding: 6em 0 4em;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.survey-form-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 1em;
+}
+
+.form-wrapper {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 2em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 1em;
+}
+
+.form-iframe {
+    width: 100%;
+    height: 800px;
+    border: none;
+    border-radius: 10px;
+}
+
+/* Results Section */
+.results-section {
+    padding: 4em 0;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.results-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 1em;
+}
+
+#survey-results {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+    background: #f9f9f9;
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    white-space: pre-wrap;
+}
+
+
+</style>
+<body>
+    <header>
+        <div class="container" style="position: sticky;">
+            <!-- <h1 class="logo">Student Advisory Council</h1> -->
+            <nav>
+                <img src="logo.png" alt="Student Advisory Council Logo" class="logo">
+                <ul>
+                    <li><a href="index.html#home" class="nav-link">Home</a></li>
+                    <li><a href="index.html#news" class="nav-link">News</a></li>
+                    <li><a href="index.html#members" class="nav-link">Council Members</a></li>
+                    <li><a href="index.html#message-values" class="nav-link">Council Message and Values</a></li>
+                    <li><a href="index.html#reach-out" class="nav-link">Reach Out</a></li>
+                    <li><a href="index.html#surveys" class="nav-link">Surveys</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-text">
+                    <h2>Food Service Survey</h2>
+                    <p>Your voice matters!</p>
+                    <!-- <a href="#reach-out" class="cta-button">Get Involved</a> -->
+                </div>
+            </div>
+        </section>
+
+        <section id="survey-form" class="survey-form-section">
+            <div class="container">
+                <!-- <h2 id="survey-title">Survey</h2> -->
+                <div class="form-wrapper">
+                    <iframe src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAZAAOvn8PBURDVBV1FHSUoxSTdGTjFBSzExSFAyMUM4Ry4u&embed=true" frameborder="0" marginheight="0" marginwidth="0" class="form-iframe">Loading…</iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <<!-- FOOTER SECTION -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-column">
+                <img src="logo.png" alt="Logo" class="footer-logo">
+                <h3>Student Advisory Council<h3>
+            </div>
+            <div class="footer-column">
+                <h3>Contact us</h3>
+                <p>Dhahran, KSA</p>
+                <p>+966 ---------</p>
+                <p>sac@kfupm.edu.sa</p>
+            </div>
+            <div class="footer-column">
+                <h3>Follow us</h3>
+                <p style="margin-left: 10em; size: 1000%;">
+                    <a href="https://www.linkedin.com/company/kconsultingclub/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </p>
+                <p style="margin-left: 10em;">
+                    <a href="https://twitter.com/yourprofile" target="_blank" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- <script src="survey.js"></script> -->
+    <script src="https://kit.fontawesome.com/f6c4f8b384.js" crossorigin="anonymous"></script>
+    <script>scc="script.js"</script>
+</body>
+</html>
