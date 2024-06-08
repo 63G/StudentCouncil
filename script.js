@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentIndex = 0;
 
     const moveToSlide = (index) => {
-        track.style.transform = `translateX(-${index * 100 / 3}%)`;
+        track.style.transform = `translateX(-${index * 100 / 3.1}%)`;
         currentIndex = index;
 
         indicators.forEach((indicator, idx) => {
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     nextButton.addEventListener('click', () => {
-        if (currentIndex < slides.length / 3 - 1) {
+        if (currentIndex < slides.length / 2 - 1) {
             moveToSlide(currentIndex + 1);
         } else {
             moveToSlide(0);
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (currentIndex > 0) {
             moveToSlide(currentIndex - 1);
         } else {
-            moveToSlide(Math.ceil(slides.length / 3) - 1);
+            moveToSlide(Math.ceil(slides.length / 2) - 1);
         }
     });
 
