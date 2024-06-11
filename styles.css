@@ -83,7 +83,7 @@ nav ul li a:hover, nav ul li a.active {
 /* Additional styles for responsiveness */
 @media (max-width: 768px) {
     .navbar-toggler {
-        display: block;
+        display: inline;
     }
 
     nav {
@@ -299,9 +299,16 @@ footer {
 }
 
 .carousel-slide {
-    flex: 1 0 33.3333%; /* Three cards at a time */
+    /* flex: 1 0 33.3333%; Three cards at a time */
+    flex: 1 0 100%; /* Display one card at a time on mobile */
     box-sizing: border-box;
     padding: 0 10px;
+}
+
+@media (min-width: 768px) {
+    .carousel-slide {
+        flex: 1 0 33.3333%; /* Display three cards at a time on larger screens */
+    }
 }
 
 .news-card {

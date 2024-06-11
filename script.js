@@ -44,11 +44,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const prevButton = document.querySelector('.prev-button');
     const nav = document.querySelector('.carousel-nav');
     const indicators = Array.from(nav.children);
-
     const slideWidth = slides[0].getBoundingClientRect().width;
 
     let currentIndex = 0;
 
+
+    // Arrange the slides next to one another
+    const setSlidePosition = (slide, index) => {
+        slide.style.left = slideWidth * index + 'px';
+    };
+    slides.forEach(setSlidePosition);
+    
     const moveToSlide = (index) => {
         track.style.transform = `translateX(-${index * 100 / 3.1}%)`;
         currentIndex = index;
@@ -144,6 +150,5 @@ document.getElementById('nav-toggle').addEventListener('click', function () {
     var nav = document.getElementById('navbar');
     nav.classList.toggle('show');
 });
-
 
 
