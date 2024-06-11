@@ -31,17 +31,24 @@ header.scrolled {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* header .logo {
-    font-size: 1.5em;
-    font-weight: bold;
-    margin-left: 1em;
-} */
-
 header .logo {
     height: 50px; /* Adjust the height as needed */
     margin-left: 1em;
 }
 
+.navbar-toggler {
+    display: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.navbar-toggler-icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
 
 nav {
     display: flex;
@@ -72,6 +79,41 @@ nav ul li a:hover, nav ul li a.active {
     background-color: #004d26;
     transform: scale(1.1);
 }
+
+/* Additional styles for responsiveness */
+@media (max-width: 768px) {
+    .navbar-toggler {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav.show {
+        display: flex;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 0.5em 0;
+        text-align: center;
+    }
+
+    nav ul li a {
+        display: block;
+        width: 100%;
+    }
+}
+
+
+
 
 .hero {
     background-color: #66cc99;
@@ -704,7 +746,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    max-width: 1200px;
+    max-width: auto;
     margin: 0 auto;
 }
 
@@ -714,7 +756,7 @@ footer {
 }
 
 .footer-logo {
-    width: 80px;
+    width: 150px;
     height: auto;
 }
 
@@ -749,10 +791,12 @@ footer {
 }
 
 .social-icon {
-    width: 300px;
-    height: 300px;
-    margin-right: 0.5em;
+    width: 500px;
+    height: 500px;
+    margin-right: 1em;
+    /* ; */
 }
+
 
 
 /* SURVEY FORM SECTION */

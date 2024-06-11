@@ -134,3 +134,16 @@ document.querySelectorAll('.survey-card').forEach(card => {
     });
 });
 
+
+// document.getElementById('nav-toggle').addEventListener('click', function () {
+//     const navContent = document.getElementById('nav-content');
+//     navContent.classList.toggle('hidden');
+// });
+
+document.getElementById('nav-toggle').addEventListener('click', function () {
+    var nav = document.getElementById('navbar');
+    nav.classList.toggle('show');
+});
+
+
+
